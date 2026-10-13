@@ -1,12 +1,12 @@
-VIVEK KANT PERSONAL WEBSITE — VERSION 2.1 (FREE-ONLY)
+VIVEK KANT PERSONAL WEBSITE — VERSION 2.2 (FREE-ONLY)
 
 OVERVIEW
 - Premium, responsive personal profile website for Vivek Kant.
 - Designed for free static hosting on GitHub Pages. No paid domain, paid subscription, paid libraries or paid backend is required by this package.
-- Opening intro uses the supplied Tyagi Sewing Machine Co. logo-reveal video, followed by “Presenting Vivek Kant”.
+- Opening intro uses the supplied Tyagi Sewing Machine Co. logo-reveal video, followed by “Presenting Vivek Kant”; the video is slightly zoomed on mobile to make the logo more visible while preserving proportions.
 - Updated TSOL logo included.
 - Hindi/English toggle, website search, light/dark mode, floating quick menu, scroll-to-top, project filters, journey timeline, profile PDF, contact card, updates, FAQ and responsive header.
-- Focus is Business Executive profile, business communications, digital presence and customer voice. Filmmaking/video editing are described only as personal hobbies; no filmmaking portfolio card is featured.
+- Focus is Business Executive profile, business communications, digital presence and customer voice. The “My Work & Business Initiatives” section describes genuine focus areas, not separate completed client projects. Filmmaking/video editing are described only as personal hobbies; no filmmaking portfolio card is featured.
 - The contact card contains phone/WhatsApp, both email addresses and both Instagram accounts.
 
 CUSTOMER FEEDBACK AND COMPLAINTS

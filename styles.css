@@ -100,7 +100,7 @@
 .lang-tool{font-size:10px;letter-spacing:.3px}
 .menu-toggle{flex-shrink:0}
 .intro-inner{width:min(720px,92vw);padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.intro-video{display:block;width:min(720px,92vw);height:min(405px,58vh);object-fit:contain;background:#fff;border:0;border-radius:4px}
+.intro-video{display:block;width:min(720px,92vw);height:min(405px,58vh);object-fit:contain;background:#fff;border:0;border-radius:4px;transform:scale(1.12);transform-origin:center center}
 .intro-fallback-logo{width:min(300px,66vw);height:auto;object-fit:contain}
 .intro-presenting{opacity:0;transform:translateY(12px);transition:opacity .65s ease,transform .65s ease;display:flex;flex-direction:column;align-items:center}
 .intro-presenting.show{opacity:1;transform:translateY(0)}
@@ -169,3 +169,15 @@ body[data-theme="dark"] .tsol-card{background:#fff}
 /* Preserve the original headline colour hierarchy after adding translation spans. */
 .hero h1 .headline-first, .section-heading h2 .heading-plain, .feedback-copy h2 .feedback-head-one, .portrait-copy h2 > span:first-child, .profile-download-copy h2 > span:first-child { color:var(--ink); }
 @media(max-width:800px){.hero-art,.hero-copy{grid-row:auto}}
+
+
+/* Version 2.2: My Work & Business Initiatives — labels describe focus areas, not fake portfolio items. */
+.focus-tag{color:#174f32;background:#e7f5eb;padding:4px 7px;border-radius:5px;font-size:7px;letter-spacing:.6px;white-space:nowrap}
+.project-card h3{min-height:2.55em}
+.project-note{max-width:900px}
+@media(max-width:680px){
+  /* Slightly enlarge the supplied intro video content on phones; maintain native proportions. */
+  .intro-video{transform:scale(1.16);transform-origin:center center}
+  .project-meta{gap:5px}
+  .focus-tag{font-size:6px;letter-spacing:.3px;padding:4px 5px}
+}

@@ -1,4 +1,4 @@
 Vivek Kant Personal Website
-Version: 2.1.0
-Budget: Free-only (GitHub Pages + FormSubmit free service)
-Last updated: 2026-10-13
+Version: 2.2.0
+Free-only static package for GitHub Pages
+Updated: 2026-10-13
