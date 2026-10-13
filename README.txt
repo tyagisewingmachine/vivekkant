@@ -15,3 +15,10 @@ Important:
 - Feedback form is DEMO ONLY. It does not send or store submissions. Connect a secure backend and approved recipient workflow before using it for real complaints.
 - Review the phone number, email, and social links before publishing. Company Instagram URL is based on the handle supplied earlier and should be verified.
 - For GitHub Pages, upload the contents of this folder to the root of the `main` branch in the existing `vivekkant` repository. Do not upload the ZIP itself as the site files.
+
+
+Version 1.1 updates:
+- Header/footer use the Tyagi Sewing Machine Co. logo instead of VK initials.
+- Hero uses Vivek Kant supplied personal-brand portrait artwork; the unconfirmed Director line was removed.
+- Feedback/complaint demo includes optional image attachment with local preview and a 5 MB limit.
+- Forms still do not send or store messages/photos; connect a secure backend before real use.
