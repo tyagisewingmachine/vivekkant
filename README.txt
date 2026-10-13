@@ -1,33 +1,20 @@
-VIVEK KANT — PERSONAL WEBSITE
+VIVEK KANT PERSONAL WEBSITE — VERSION 1.4
 
-Files:
-- index.html: page content
-- styles.css: responsive design and animations
-- script.js: intro, mobile navigation, scroll reveal, demo feedback form
-- assets/: provided Tyagi Sewing Machine Co. and TSOL logos
+This package contains the personal website for GitHub Pages.
 
-Preview:
-Open index.html in a modern browser. The page uses Google Fonts when internet access is available and has system fallbacks.
+CORRECT IMAGE PLACEMENT
+1. Opening intro: assets/tyagi-intro-logo.png — Tyagi Sewing Machine Co. logo.
+2. Header and footer: assets/vivek-kant-header-wordmark.png — clean transparent VIVEK KANT wordmark, with full text visible.
+3. Main large hero card: assets/vivek-kant-hero-portrait.png — 2D illustrated face portrait only.
+4. Lower personal-profile section: assets/vivek-kant-banner.png — wider artwork with VIVEK KANT wordmark and 2D portrait.
+5. Company section: the Tyagi Sewing Machine Co. and TSOL logos.
+6. Feedback/complaint form: local photo attachment preview only; demo submits nothing and stores nothing.
 
-Important:
-- This is a personal website, not the official Tyagi Sewing Machine Co. website.
-- “View Official Catalogue” links to https://www.tyagisewingmachine.com/
-- Feedback form is DEMO ONLY. It does not send or store submissions. Connect a secure backend and approved recipient workflow before using it for real complaints.
-- Review the phone number, email, and social links before publishing. Company Instagram URL is based on the handle supplied earlier and should be verified.
-- For GitHub Pages, upload the contents of this folder to the root of the `main` branch in the existing `vivekkant` repository. Do not upload the ZIP itself as the site files.
+HOW TO UPDATE GITHUB PAGES
+- Extract this ZIP.
+- Open the folder named vivekkant_personal_site.
+- Upload the CONTENTS of that folder (index.html, styles.css, script.js, README.txt and the entire assets folder) into the ROOT of your existing GitHub repository.
+- Replace existing files when prompted. Be sure to replace index.html and the complete assets folder, not only the CSS. Do not upload just the ZIP itself. Do not leave these files one folder level below the repository root.
+- Wait for GitHub Pages to deploy, then refresh the website. If an old version remains, clear the browser cache or open the link in an incognito tab. This version includes cache-busting query strings for the updated CSS and image references.
 
-
-Version 1.1 updates:
-- Header/footer use the Tyagi Sewing Machine Co. logo instead of VK initials.
-- Hero uses Vivek Kant supplied personal-brand portrait artwork; the unconfirmed Director line was removed.
-- Feedback/complaint demo includes optional image attachment with local preview and a 5 MB limit.
-- Forms still do not send or store messages/photos; connect a secure backend before real use.
-
-Version 1.2 update: the VIVEK KANT wordmark is used in the header, intro and main hero graphic. Tyagi Sewing Machine Co. and TSOL logos remain in the business section. Feedback/complaint demo supports local image selection and preview only; submissions and attachments are not sent or stored.
-
-
-Version 1.3 screenshot corrections:
-- Intro screen now starts with the Tyagi Sewing Machine Co. logo.
-- Header/footer use a properly cropped, transparent VIVEK KANT wordmark asset.
-- Main hero artwork now features a crop of the supplied 2D illustrated portrait, without the wordmark text block.
-- Portrait section, official catalogue links, and demo-only attachment preview remain included.
+This ZIP does not itself upload or publish the website to GitHub.

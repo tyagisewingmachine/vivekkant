@@ -51,3 +51,38 @@
   .hero-art-label{bottom:9px;font-size:7px;letter-spacing:1.1px}
   .intro-logo{width:min(245px,61vw);max-height:none}
 }
+
+
+/* v1.4: final, screenshot-driven logo placement and image sizing */
+.brand-icon.personal-wordmark {
+  display:flex; align-items:center; justify-content:center;
+  width:108px; flex:0 0 108px; height:40px;
+  padding:0; margin:0; overflow:visible;
+  border:0; border-radius:0; background:transparent;
+}
+.brand-icon.personal-wordmark img {
+  display:block; width:100%; height:auto; max-height:28px;
+  object-fit:contain; object-position:center; flex-shrink:0;
+}
+.intro-logo {
+  display:block; width:min(300px, 70vw); height:auto;
+  max-height:none; aspect-ratio:1 / 1; object-fit:contain;
+}
+.hero-art-profile {
+  display:flex; align-items:center; justify-content:center;
+  min-width:0; background:#fff; padding:12px 12px 34px;
+  overflow:hidden;
+}
+.hero-art-profile .hero-feature.hero-portrait {
+  display:block; flex:0 1 auto; width:auto; height:100%;
+  max-width:100%; max-height:100%; object-fit:contain;
+  object-position:center; position:relative; z-index:1;
+  mix-blend-mode:multiply;
+}
+@media (max-width:680px) {
+  .brand-icon.personal-wordmark { width:100px; flex-basis:100px; height:40px; }
+  .brand-icon.personal-wordmark img { max-height:25px; }
+  .intro-logo { width:min(250px, 64vw); }
+  .hero-art-profile { height:390px; padding:10px 10px 30px; }
+  .hero-art-profile .hero-feature.hero-portrait { height:100%; width:auto; max-width:100%; }
+}
