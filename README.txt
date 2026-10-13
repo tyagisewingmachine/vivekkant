@@ -1,20 +1,36 @@
-VIVEK KANT PERSONAL WEBSITE — VERSION 1.4
+VIVEK KANT PERSONAL WEBSITE — VERSION 2.0
 
-This package contains the personal website for GitHub Pages.
+OVERVIEW
+- Premium, responsive personal profile website for Vivek Kant.
+- Free-only, static website package for GitHub Pages. No paid framework, API or backend is used.
+- Opening intro uses the supplied Tyagi Sewing Machine Co. logo-reveal video, followed by “Presenting Vivek Kant”.
+- TSOL logo is the latest supplied image.
+- Includes Hindi/English UI toggle, site search, local light/dark mode, floating quick menu, scroll-to-top, project filters, journey timeline, profile PDF download, downloadable VCF contact card, updates placeholders and FAQ.
+- Portfolio and blog cards are explicitly marked placeholders until actual approved work is added.
+- Feedback form is a local demo preview only. It does not send or store text or attachments.
 
-CORRECT IMAGE PLACEMENT
-1. Opening intro: assets/tyagi-intro-logo.png — Tyagi Sewing Machine Co. logo.
-2. Header and footer: assets/vivek-kant-header-wordmark.png — clean transparent VIVEK KANT wordmark, with full text visible.
-3. Main large hero card: assets/vivek-kant-hero-portrait.png — 2D illustrated face portrait only.
-4. Lower personal-profile section: assets/vivek-kant-banner.png — wider artwork with VIVEK KANT wordmark and 2D portrait.
-5. Company section: the Tyagi Sewing Machine Co. and TSOL logos.
-6. Feedback/complaint form: local photo attachment preview only; demo submits nothing and stores nothing.
+KEY FILES
+- index.html — page structure and content
+- styles.css — layout, mobile styles, light/dark mode
+- script.js — local interactivity, translations, filtering and demo form behavior
+- assets/vivek-intro.mp4 — supplied intro video
+- assets/tsol-logo.png — supplied TSOL logo
+- assets/vivek-kant-profile.pdf — downloadable professional profile
+- assets/vivek-kant-contact.vcf — downloadable contact card without unconfirmed email/phone
 
-HOW TO UPDATE GITHUB PAGES
-- Extract this ZIP.
-- Open the folder named vivekkant_personal_site.
-- Upload the CONTENTS of that folder (index.html, styles.css, script.js, README.txt and the entire assets folder) into the ROOT of your existing GitHub repository.
-- Replace existing files when prompted. Be sure to replace index.html and the complete assets folder, not only the CSS. Do not upload just the ZIP itself. Do not leave these files one folder level below the repository root.
-- Wait for GitHub Pages to deploy, then refresh the website. If an old version remains, clear the browser cache or open the link in an incognito tab. This version includes cache-busting query strings for the updated CSS and image references.
+IMPORTANT CONTACT DETAIL NOTE
+Direct email and phone are not displayed because fresh public contact details have not yet been confirmed. Profile claims refer to business contribution/support under Mr. Rajni Kant's guidance and do not claim legal ownership or directorship.
 
-This ZIP does not itself upload or publish the website to GitHub.
+DEPLOY TO EXISTING GITHUB PAGES REPOSITORY
+1. Download and extract this ZIP.
+2. Open the folder named “vivekkant_personal_site”.
+3. Upload the CONTENTS of that folder to the ROOT of your existing GitHub repository (not the ZIP, and not a nested folder).
+4. Replace index.html, styles.css, script.js, README.txt and the full assets folder when prompted. Keep the assets folder structure exactly as provided.
+5. Wait for GitHub Pages to deploy. Open the current site URL in an incognito tab or refresh after deployment.
+
+TEST NOTES
+- Intro video plays muted and inline; Skip intro is available. Browser autoplay behavior can vary, so the fallback logo is included.
+- Search, project filters, theme, language, menu, VCF/PDF download and scroll button work client-side.
+- Copy profile link requires clipboard permission; if blocked, the page shows a fallback instruction.
+- The feedback form intentionally never submits to a server. Do not present it as a live complaint system. A secure backend, authorised recipients, privacy notice and company approval would be needed before that change.
+- The package is not published to GitHub automatically. This ZIP is a deployable build only.

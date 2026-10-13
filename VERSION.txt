@@ -1,0 +1,3 @@
+Vivek Kant Website Version 2.0
+Built: 2026-10-13
+Free-only static build; deployment to GitHub Pages is manual.
