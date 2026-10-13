@@ -1,11 +1,37 @@
 (() => {
   const intro = document.getElementById('intro');
+  const introVideo = document.getElementById('introVideo');
   const skip = document.getElementById('skipIntro');
-  const hideIntro = () => { if (intro) intro.classList.add('hide'); };
-  if (sessionStorage.getItem('vkIntroSeen') === '1') hideIntro();
-  const dismissIntro = () => { hideIntro(); sessionStorage.setItem('vkIntroSeen', '1'); };
+  const seenKey = 'vkIntroSeen_v15';
+  let introTimer = null;
+
+  const hideIntro = () => {
+    if (intro) intro.classList.add('hide');
+    if (introVideo) introVideo.pause();
+  };
+  const dismissIntro = () => {
+    hideIntro();
+    try { sessionStorage.setItem(seenKey, '1'); } catch (_) {}
+    if (introTimer) window.clearTimeout(introTimer);
+  };
+  const scheduleDismiss = (delay) => {
+    if (introTimer) window.clearTimeout(introTimer);
+    introTimer = window.setTimeout(dismissIntro, delay);
+  };
+
+  let introSeen = false;
+  try { introSeen = sessionStorage.getItem(seenKey) === '1'; } catch (_) {}
+  if (introSeen) {
+    hideIntro();
+  } else {
+    // The video is muted for reliable autoplay; the fallback prevents a stalled intro.
+    scheduleDismiss(6500);
+    introVideo?.addEventListener('ended', () => scheduleDismiss(900), { once: true });
+    introVideo?.addEventListener('error', () => scheduleDismiss(1600), { once: true });
+    const playAttempt = introVideo?.play();
+    if (playAttempt && typeof playAttempt.catch === 'function') playAttempt.catch(() => {});
+  }
   skip?.addEventListener('click', dismissIntro);
-  window.setTimeout(dismissIntro, 2800);
 
   const toggle = document.getElementById('menuToggle');
   const nav = document.getElementById('nav');
@@ -15,14 +41,21 @@
     toggle.textContent = open ? '×' : '☰';
   });
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    nav.classList.remove('open'); toggle?.setAttribute('aria-expanded', 'false'); if (toggle) toggle.textContent = '☰';
+    nav.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
+    if (toggle) toggle.textContent = '☰';
   }));
 
   const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-  }), {threshold: 0.12});
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  }), { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+
   const feedbackForm = document.getElementById('feedbackForm');
   const photoInput = document.getElementById('photoAttachment');
   const previewWrap = document.getElementById('attachmentPreview');
@@ -49,16 +82,17 @@
     }
     if (previewUrl) URL.revokeObjectURL(previewUrl);
     previewUrl = URL.createObjectURL(file);
-    previewImage.src = previewUrl;
-    fileName.textContent = file.name;
-    previewWrap.hidden = false;
+    if (previewImage) previewImage.src = previewUrl;
+    if (fileName) fileName.textContent = file.name;
+    if (previewWrap) previewWrap.hidden = false;
     if (result) result.textContent = 'Photo selected for local demo preview.';
   });
   removePhoto?.addEventListener('click', clearPhoto);
   feedbackForm?.addEventListener('submit', event => {
     event.preventDefault();
     const hasPhoto = Boolean(photoInput?.files?.length);
-    document.getElementById('formResult').textContent = hasPhoto
+    const result = document.getElementById('formResult');
+    if (result) result.textContent = hasPhoto
       ? 'Demo preview only — message and photo were not sent or saved.'
       : 'Demo preview only — nothing was sent or saved.';
   });
