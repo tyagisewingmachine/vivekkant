@@ -24,3 +24,10 @@ Version 1.1 updates:
 - Forms still do not send or store messages/photos; connect a secure backend before real use.
 
 Version 1.2 update: the VIVEK KANT wordmark is used in the header, intro and main hero graphic. Tyagi Sewing Machine Co. and TSOL logos remain in the business section. Feedback/complaint demo supports local image selection and preview only; submissions and attachments are not sent or stored.
+
+
+Version 1.3 screenshot corrections:
+- Intro screen now starts with the Tyagi Sewing Machine Co. logo.
+- Header/footer use a properly cropped, transparent VIVEK KANT wordmark asset.
+- Main hero artwork now features a crop of the supplied 2D illustrated portrait, without the wordmark text block.
+- Portrait section, official catalogue links, and demo-only attachment preview remain included.
