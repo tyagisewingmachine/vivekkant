@@ -22,3 +22,5 @@ Version 1.1 updates:
 - Hero uses Vivek Kant supplied personal-brand portrait artwork; the unconfirmed Director line was removed.
 - Feedback/complaint demo includes optional image attachment with local preview and a 5 MB limit.
 - Forms still do not send or store messages/photos; connect a secure backend before real use.
+
+Version 1.2 update: the VIVEK KANT wordmark is used in the header, intro and main hero graphic. Tyagi Sewing Machine Co. and TSOL logos remain in the business section. Feedback/complaint demo supports local image selection and preview only; submissions and attachments are not sent or stored.
