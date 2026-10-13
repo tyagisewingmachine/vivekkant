@@ -1,3 +1,4 @@
-Vivek Kant Website Version 2.0
-Built: 2026-10-13
-Free-only static build; deployment to GitHub Pages is manual.
+Vivek Kant Personal Website
+Version: 2.1.0
+Budget: Free-only (GitHub Pages + FormSubmit free service)
+Last updated: 2026-10-13
