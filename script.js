@@ -168,6 +168,34 @@
     faqProjectsA:'यह सेक्शन बिज़नेस में मेरे मौजूदा योगदान के क्षेत्रों को दिखाता है, अलग-अलग पूरे किए गए क्लाइंट प्रोजेक्ट्स को नहीं। उदाहरण तभी जोड़े जाएँगे जब उन्हें सार्वजनिक रूप से साझा करने की मंज़ूरी होगी।'
   });
 
+  // v2.4: business-focused FAQ copy; no hosting/platform questions in the public FAQ.
+  Object.assign(translations.en, {
+    helpLabel:'BUSINESS & FAQs', helpHeading:'A few things about my work.',
+    faqRoleQ:'What is Vivek’s role at Tyagi Sewing Machine Co.?',
+    faqRoleA:'I work as a Business Executive, contributing to business communication, product presentation, customer engagement and digital presence. Key business decisions remain under the guidance and approval of Mr. Rajni Kant.',
+    faqFocusQ:'Which areas of business does Vivek focus on?',
+    faqFocusA:'My focus areas include product and catalogue presentation, branding and marketing, customer relations, and the company’s digital presence.',
+    faqEnquiriesQ:'Can I contact Vivek for business enquiries?',
+    faqEnquiriesA:'Yes. Call or WhatsApp +91 96250 13545, or email tyagisewingofficial@gmail.com. For official company information and the product catalogue, visit tyagisewingmachine.com.',
+    faqFeedbackQ:'How can customers share feedback or raise a concern?',
+    faqFeedbackA:'Use the Feedback & Concerns form on this website and provide a valid email address. For important follow-up, customers can also email tyagisewingofficial@gmail.com directly. Please do not include passwords, payment details or other sensitive information.',
+    faqWorkQ:'What do the work cards on this website represent?',
+    faqWorkA:'They describe the business areas I contribute to: product and catalogue presentation, brand and marketing, customer voice, and digital presence. They are not all claims of completed client projects; samples are shared only when approved for public use.'
+  });
+  Object.assign(translations.hi, {
+    helpLabel:'बिज़नेस और FAQ', helpHeading:'मेरे काम से जुड़ी कुछ बातें।',
+    faqRoleQ:'Tyagi Sewing Machine Co. में विवेक की क्या भूमिका है?',
+    faqRoleA:'मैं Business Executive के रूप में बिज़नेस कम्युनिकेशन, प्रोडक्ट प्रस्तुति, ग्राहक जुड़ाव और डिजिटल उपस्थिति में योगदान देता हूँ। मुख्य व्यावसायिक फैसले श्री रजनी कांत के मार्गदर्शन और मंज़ूरी से लिए जाते हैं।',
+    faqFocusQ:'विवेक बिज़नेस के किन क्षेत्रों पर फोकस करते हैं?',
+    faqFocusA:'मेरा फोकस प्रोडक्ट और कैटलॉग प्रस्तुति, ब्रांडिंग और मार्केटिंग, ग्राहक संबंधों और कंपनी की डिजिटल उपस्थिति पर है।',
+    faqEnquiriesQ:'क्या मैं बिज़नेस से जुड़ी पूछताछ के लिए विवेक से संपर्क कर सकता हूँ?',
+    faqEnquiriesA:'हाँ। +91 96250 13545 पर कॉल या WhatsApp करें, या tyagisewingofficial@gmail.com पर ईमेल करें। कंपनी की आधिकारिक जानकारी और प्रोडक्ट कैटलॉग के लिए tyagisewingmachine.com देखें।',
+    faqFeedbackQ:'ग्राहक फ़ीडबैक या अपनी समस्या कैसे साझा कर सकते हैं?',
+    faqFeedbackA:'इस वेबसाइट पर Feedback & Concerns फ़ॉर्म का उपयोग करें और सही ईमेल पता दें। ज़रूरी फ़ॉलो-अप के लिए tyagisewingofficial@gmail.com पर सीधे ईमेल भी कर सकते हैं। पासवर्ड, भुगतान की जानकारी या अन्य संवेदनशील जानकारी न भेजें।',
+    faqWorkQ:'इस वेबसाइट के Work Cards क्या दिखाते हैं?',
+    faqWorkA:'ये उन बिज़नेस क्षेत्रों को दिखाते हैं जिनमें मैं योगदान देता हूँ: प्रोडक्ट और कैटलॉग प्रस्तुति, ब्रांड और मार्केटिंग, ग्राहक की आवाज़ और डिजिटल उपस्थिति। ये सभी पूरे किए गए क्लाइंट प्रोजेक्ट्स के दावे नहीं हैं; सैंपल तभी साझा किए जाते हैं जब उन्हें सार्वजनिक करने की मंज़ूरी हो।'
+  });
+
   const langToggle = $('#langToggle');
   let lang = 'en';
   try { lang = localStorage.getItem('vkLang') || 'en'; } catch (_) {}
@@ -188,10 +216,71 @@
   setLanguage(lang);
   langToggle?.addEventListener('click', () => setLanguage(lang === 'en' ? 'hi' : 'en'));
 
+  // v2.4: optional content configuration with bilingual business FAQs. Images may be normal asset paths or data URLs
+  // exported by content-editor.html. If the JSON cannot be loaded, the built-in page remains intact.
+  let editableSiteContent = null;
+  const applyEditableSiteContent = () => {
+    const cfg = editableSiteContent;
+    if (!cfg) return;
+    const setImage = (selector, src, altText) => {
+      const el = $(selector);
+      if (!el || typeof src !== 'string' || !src.trim()) return;
+      el.setAttribute('src', src);
+      if (altText) el.setAttribute('alt', altText);
+    };
+    setImage('.hero-portrait', cfg.heroImage, 'Vivek Kant profile portrait');
+    setImage('.portrait-art img', cfg.aboutImage, 'Vivek Kant profile artwork');
+    const cardMap = new Map((Array.isArray(cfg.projects) ? cfg.projects : []).map(p => [p.id, p]));
+    $$('.project-card').forEach(card => {
+      const item = cardMap.get(card.dataset.category);
+      if (!item) return;
+      const title = $('h3', card), body = $('p', card);
+      if (title && typeof item[lang === 'hi' ? 'titleHi' : 'titleEn'] === 'string') title.textContent = item[lang === 'hi' ? 'titleHi' : 'titleEn'];
+      if (body && typeof item[lang === 'hi' ? 'bodyHi' : 'bodyEn'] === 'string') body.textContent = item[lang === 'hi' ? 'bodyHi' : 'bodyEn'];
+      const art = $('.project-art', card), img = $('.project-card-image', card);
+      if (!art || !img) return;
+      if (typeof item.image === 'string' && item.image.trim()) {
+        img.src = item.image;
+        img.alt = `${title ? title.textContent : 'Work card'} image`;
+        img.hidden = false;
+        art.classList.add('has-custom-image');
+      } else {
+        img.removeAttribute('src');
+        img.alt = '';
+        img.hidden = true;
+        art.classList.remove('has-custom-image');
+      }
+    });
+    const faqItems = Array.isArray(cfg.faq) ? cfg.faq : [];
+    $$('#faqList details').forEach((detail, index) => {
+      const item = faqItems[index];
+      if (!item) return;
+      const question = $('summary', detail), answer = $('p', detail);
+      const qKey = lang === 'hi' ? 'questionHi' : 'questionEn';
+      const aKey = lang === 'hi' ? 'answerHi' : 'answerEn';
+      if (question && typeof item[qKey] === 'string') question.textContent = item[qKey];
+      if (answer && typeof item[aKey] === 'string') answer.textContent = item[aKey];
+    });
+  };
+  const loadEditableSiteContent = async () => {
+    try {
+      const response = await fetch('site-content.json?v=2.4.0', { cache: 'no-store' });
+      if (!response.ok) return;
+      const cfg = await response.json();
+      if (!cfg || typeof cfg !== 'object') return;
+      editableSiteContent = cfg;
+      applyEditableSiteContent();
+    } catch (_) {
+      // Opening the files directly on a device may block fetch; the default HTML still works.
+    }
+  };
+  loadEditableSiteContent();
+  langToggle?.addEventListener('click', () => window.setTimeout(applyEditableSiteContent, 0));
+
   // Search overlay and static section index. No external search service required.
   const searchOverlay = $('#searchOverlay'), searchToggle = $('#searchToggle'), searchClose = $('#searchClose'), searchInput = $('#siteSearchInput'), searchResults = $('#searchResults');
   const searchable = [
-    ['About me','मेरे बारे में','about','Business-minded and always learning'],['What I do','मैं क्या करता हूँ','work','Brand and marketing, digital presence, customer engagement'],['My work','मेरे काम','projects','Product catalogue, brand marketing, customer feedback, digital presence'],['My journey','मेरी यात्रा','journey','Education, B.Com, commerce, current direction'],['Profile download','प्रोफ़ाइल डाउनलोड','profile-download','PDF resume, contact card, vCard'],['Family business','पारिवारिक व्यवसाय','business','Tyagi Sewing Machine Co., TSOL, official catalogue'],['Feedback and complaints','फ़ीडबैक और शिकायत','feedback','Personal feedback or company complaint sent to company email'],['Contact','संपर्क','contact','Phone, WhatsApp, email, personal and company Instagram'],['Updates and notes','अपडेट और नोट्स','updates','Blog, articles, creative notes'],['Help and FAQ','मदद और FAQ','help','Privacy, site help, no paid services']
+    ['About me','मेरे बारे में','about','Business-minded and always learning'],['What I do','मैं क्या करता हूँ','work','Brand and marketing, digital presence, customer engagement'],['My work','मेरे काम','projects','Product catalogue, brand marketing, customer feedback, digital presence'],['My journey','मेरी यात्रा','journey','Education, B.Com, commerce, current direction'],['Profile download','प्रोफ़ाइल डाउनलोड','profile-download','PDF resume, contact card, vCard'],['Family business','पारिवारिक व्यवसाय','business','Tyagi Sewing Machine Co., TSOL, official catalogue'],['Feedback and complaints','फ़ीडबैक और शिकायत','feedback','Personal feedback or company complaint sent to company email'],['Contact','संपर्क','contact','Phone, WhatsApp, email, personal and company Instagram'],['Updates and notes','अपडेट और नोट्स','updates','Blog, articles, creative notes'],['Business & FAQs','बिज़नेस और FAQ','help','Vivek business role, focus areas, enquiries, customer feedback']
   ];
   const openSearch = () => { if (!searchOverlay) return; searchOverlay.hidden = false; document.body.classList.add('search-open'); window.setTimeout(() => searchInput?.focus(), 25); };
   const closeSearch = () => { if (!searchOverlay) return; searchOverlay.hidden = true; document.body.classList.remove('search-open'); searchToggle?.focus(); };

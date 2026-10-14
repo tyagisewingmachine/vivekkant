@@ -181,3 +181,9 @@ body[data-theme="dark"] .tsol-card{background:#fff}
   .project-meta{gap:5px}
   .focus-tag{font-size:6px;letter-spacing:.3px;padding:4px 5px}
 }
+
+
+/* v2.3 editable project-card artwork (hidden unless selected in Content Editor) */
+.project-art .project-card-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;border-radius:inherit}
+.project-art.has-custom-image>*:not(.project-card-image){display:none!important}
+.project-art.has-custom-image{background:#f3f6fb}

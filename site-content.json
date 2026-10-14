@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "heroImage": "assets/vivek-kant-hero-portrait.png",
+  "aboutImage": "assets/vivek-kant-banner.png",
+  "projects": [
+    {
+      "id": "business",
+      "image": "",
+      "titleEn": "Product presentation & catalogue",
+      "bodyEn": "Supporting product details, TSOL machine visuals, posters and catalogue presentation for clear customer communication.",
+      "titleHi": "प्रोडक्ट प्रस्तुति और कैटलॉग",
+      "bodyHi": "ग्राहकों तक जानकारी स्पष्ट पहुँचाने के लिए प्रोडक्ट विवरण, TSOL मशीन विज़ुअल, पोस्टर और कैटलॉग प्रस्तुति में सहयोग।"
+    },
+    {
+      "id": "design",
+      "image": "",
+      "titleEn": "Brand & marketing",
+      "bodyEn": "Supporting brand presentation, marketing creatives and company social media communication.",
+      "titleHi": "ब्रांड और मार्केटिंग",
+      "bodyHi": "ब्रांड प्रस्तुति, मार्केटिंग क्रिएटिव और कंपनी के सोशल मीडिया संवाद में सहयोग।"
+    },
+    {
+      "id": "customer",
+      "image": "",
+      "titleEn": "Customer feedback & complaints",
+      "bodyEn": "Helping customers share feedback, suggestions and company concerns through a clear contact path.",
+      "titleHi": "ग्राहक फ़ीडबैक और शिकायतें",
+      "bodyHi": "ग्राहकों को फ़ीडबैक, सुझाव और कंपनी से जुड़ी चिंताएँ स्पष्ट तरीके से साझा करने का रास्ता देना।"
+    },
+    {
+      "id": "digital",
+      "image": "",
+      "titleEn": "Digital presence",
+      "bodyEn": "Improving website content, company links and online information customers use to find what they need.",
+      "titleHi": "डिजिटल उपस्थिति",
+      "bodyHi": "वेबसाइट सामग्री, कंपनी लिंक और ऑनलाइन जानकारी को बेहतर बनाना ताकि ग्राहक ज़रूरी जानकारी आसानी से पा सकें।"
+    }
+  ],
+  "faq": [
+    {
+      "id": "role",
+      "questionEn": "What is Vivek’s role at Tyagi Sewing Machine Co.?",
+      "answerEn": "I work as a Business Executive, contributing to business communication, product presentation, customer engagement and digital presence. Key business decisions remain under the guidance and approval of Mr. Rajni Kant.",
+      "questionHi": "Tyagi Sewing Machine Co. में विवेक की क्या भूमिका है?",
+      "answerHi": "मैं Business Executive के रूप में बिज़नेस कम्युनिकेशन, प्रोडक्ट प्रस्तुति, ग्राहक जुड़ाव और डिजिटल उपस्थिति में योगदान देता हूँ। मुख्य व्यावसायिक फैसले श्री रजनी कांत के मार्गदर्शन और मंज़ूरी से लिए जाते हैं।"
+    },
+    {
+      "id": "focus",
+      "questionEn": "Which areas of business does Vivek focus on?",
+      "answerEn": "My focus areas include product and catalogue presentation, branding and marketing, customer relations, and the company’s digital presence.",
+      "questionHi": "विवेक बिज़नेस के किन क्षेत्रों पर फोकस करते हैं?",
+      "answerHi": "मेरा फोकस प्रोडक्ट और कैटलॉग प्रस्तुति, ब्रांडिंग और मार्केटिंग, ग्राहक संबंधों और कंपनी की डिजिटल उपस्थिति पर है।"
+    },
+    {
+      "id": "enquiries",
+      "questionEn": "Can I contact Vivek for business enquiries?",
+      "answerEn": "Yes. Call or WhatsApp +91 96250 13545, or email tyagisewingofficial@gmail.com. For official company information and the product catalogue, visit tyagisewingmachine.com.",
+      "questionHi": "क्या मैं बिज़नेस से जुड़ी पूछताछ के लिए विवेक से संपर्क कर सकता हूँ?",
+      "answerHi": "हाँ। +91 96250 13545 पर कॉल या WhatsApp करें, या tyagisewingofficial@gmail.com पर ईमेल करें। कंपनी की आधिकारिक जानकारी और प्रोडक्ट कैटलॉग के लिए tyagisewingmachine.com देखें।"
+    },
+    {
+      "id": "feedback",
+      "questionEn": "How can customers share feedback or raise a concern?",
+      "answerEn": "Use the Feedback & Concerns form on this website and provide a valid email address. For important follow-up, customers can also email tyagisewingofficial@gmail.com directly. Please do not include passwords, payment details or other sensitive information.",
+      "questionHi": "ग्राहक फ़ीडबैक या अपनी समस्या कैसे साझा कर सकते हैं?",
+      "answerHi": "इस वेबसाइट पर Feedback & Concerns फ़ॉर्म का उपयोग करें और सही ईमेल पता दें। ज़रूरी फ़ॉलो-अप के लिए tyagisewingofficial@gmail.com पर सीधे ईमेल भी कर सकते हैं। पासवर्ड, भुगतान की जानकारी या अन्य संवेदनशील जानकारी न भेजें।"
+    },
+    {
+      "id": "work",
+      "questionEn": "What do the work cards on this website represent?",
+      "answerEn": "They describe the business areas I contribute to: product and catalogue presentation, brand and marketing, customer voice, and digital presence. They are not all claims of completed client projects; samples are shared only when approved for public use.",
+      "questionHi": "इस वेबसाइट के Work Cards क्या दिखाते हैं?",
+      "answerHi": "ये उन बिज़नेस क्षेत्रों को दिखाते हैं जिनमें मैं योगदान देता हूँ: प्रोडक्ट और कैटलॉग प्रस्तुति, ब्रांड और मार्केटिंग, ग्राहक की आवाज़ और डिजिटल उपस्थिति। ये सभी पूरे किए गए क्लाइंट प्रोजेक्ट्स के दावे नहीं हैं; सैंपल तभी साझा किए जाते हैं जब उन्हें सार्वजनिक करने की मंज़ूरी हो।"
+    }
+  ]
+}
